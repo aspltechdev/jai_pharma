@@ -1,25 +1,44 @@
 import React from "react";
+
 const Footer = () => {
   return (
-    <footer style={{ background: "#0b2f2f", color: "#c2d6d3", padding: "60px 5% 20px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "40px", maxWidth: "1200px", margin: "0 auto" }}>
-        <div><h3 style={{ color: "#fff", fontWeight: "800" }}>JAI PHARMACEUTICALS</h3><p style={{ marginTop: "12px", fontSize: "14px", color: "#8fb0ad" }}>Caring for Health. Committed to Quality.</p></div>
-        <div>
-          <h4 style={{ color: "#fff", marginBottom: "16px" }}>Quick Links</h4>
-          <ul style={{ listStyle: "none", padding: 0 }}>
-            {[
-              ["Home","#home"],["About Us","#about"],["Products","#products"],["Gallery","#gallery"],["Contact Us","#contact"]
-            ].map(([label, link]) => (
-              <li key={label} style={{ marginBottom: "12px" }}>
-                <a href={link} style={{ color: "#8fb0ad", textDecoration: "none", transition: "0.3s" }} onMouseEnter={e=>e.target.style.color="#fff"} onMouseLeave={e=>e.target.style.color="#8fb0ad"}>→ {label}</a>
-              </li>
-            ))}
-          </ul>
+    <footer style={{ background: "#0a2e2e", color: "white", padding: "50px 40px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "30px", maxWidth: "1200px", margin: "0 auto" }}>
+        
+        <div style={{ flex: "1", minWidth: "250px" }}>
+          <h3 style={{ fontWeight: "bold", marginBottom: "10px" }}>JAI PHARMACEUTICALS</h3>
+          <p style={{ color: "#a7c4bc" }}>Caring for Health. Committed to Quality.</p>
         </div>
-        <div><h4 style={{ color: "#fff", marginBottom: "16px" }}>Contact</h4><p style={{ fontSize: "14px", color: "#8fb0ad" }}>Bangalore, Karnataka<br/>info@jaipharma.com<br/>+91 98765 43210</p></div>
+
+        <div style={{ flex: "1", minWidth: "200px" }}>
+          <h4 style={{ marginBottom: "15px" }}>Quick Links</h4>
+          <p style={{ color: "#a7c4bc" }}>→ Home</p>
+          <p style={{ color: "#a7c4bc" }}>→ About Us</p>
+          <p style={{ color: "#a7c4bc" }}>→ Products</p>
+          <p style={{ color: "#a7c4bc" }}>→ Gallery</p>
+          <p style={{ color: "#a7c4bc" }}>→ Contact Us</p>
+        </div>
+
+        <div style={{ flex: "1", minWidth: "250px" }}>
+          <h4 style={{ marginBottom: "15px" }}>Contact</h4>
+          <p style={{ color: "#a7c4bc", lineHeight: "1.6" }}>
+            Thuthipattu, Gingee Taluk,<br />
+            Viluppuram, Tamil Nadu – 605201
+          </p>
+          <p style={{ color: "#a7c4bc", marginTop: "10px" }}>WhatsApp: +91 97910 60803</p>
+          <a 
+            href="https://wa.me/919791060803" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{ color: "#5eead4", textDecoration: "none", fontWeight: "bold", marginTop: "5px", display: "inline-block" }}
+          >
+            Chat on WhatsApp ↗
+          </a>
+        </div>
+
       </div>
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", marginTop: "40px", paddingTop: "16px", textAlign: "center", fontSize: "13px", color: "#6b8a8a" }}>© 2026 Jai Pharmaceuticals. All Rights Reserved.</div>
     </footer>
   );
 };
+
 export default Footer;
