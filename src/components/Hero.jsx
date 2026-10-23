@@ -1,12 +1,13 @@
 import React from "react";
 import "./Hero.css";
+import logo from "../assets/logo.png";
 
 const Hero = () => {
   return (
     <section className="hero-section">
       <nav className="hero-navbar">
         <a href="#home" className="hero-logo">
-          <img src="/src/assets/logo.png" alt="Jai Pharmaceuticals Logo" />
+          <img src={logo} alt="Jai Pharmaceuticals Logo" />
         </a>
 
         <div className="hero-nav-links">

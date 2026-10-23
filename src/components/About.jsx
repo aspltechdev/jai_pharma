@@ -7,7 +7,7 @@ const About = () => {
       <div className="about-container">
         <div className="about-image-wrapper">
           <img
-            src="/src/assets/about image.png"
+            src="/src/assets/aboutimage.png"
             alt="Pharmaceutical manufacturing and quality testing"
             className="about-image"
           />
