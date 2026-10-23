@@ -6,18 +6,19 @@ import About from "./components/About";
 import Products from "./components/Products";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
-import Cta from "./components/Cta";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="app">
+      <section id="home"><Hero /></section>
+      <section id="about"><About /></section>
+      <section id="products"><Products /></section>
+      <section id="gallery"><Gallery /></section>
+      <section id="contact"><Contact /></section>
       
-      <Hero />
-      <About />
-      <Products />
-      <Gallery />
-      <Contact />
-      <Cta />
+      {/* ONLY NEW OPTIMIZED FOOTER - BOTTOM ONE */}
+      <Footer />
     </div>
   );
 }
