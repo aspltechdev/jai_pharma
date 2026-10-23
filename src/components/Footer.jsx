@@ -32,7 +32,6 @@ const Footer = () => {
             rel="noopener noreferrer"
             style={{ color: "#5eead4", textDecoration: "none", fontWeight: "bold", marginTop: "5px", display: "inline-block" }}
           >
-            Chat on WhatsApp ↗
           </a>
         </div>
 
