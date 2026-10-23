@@ -1,6 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import logo from "../assets/logo.png";
+import heroImage from "../assets/heroimage.png"; // <-- HERE, top with other imports
 
 const Hero = () => {
   return (
@@ -58,7 +59,7 @@ const Hero = () => {
 
         <div className="hero-image-wrapper">
           <img
-            src="/src/assets/hero image.png"
+            src={heroImage}
             alt="Healthcare and skincare products"
             className="hero-image"
           />
