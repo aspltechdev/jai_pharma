@@ -1,0 +1,126 @@
+/* =========================================
+   JAI PHARMACEUTICALS
+   CTA / FOOTER SECTION
+========================================= */
+
+.cta-section {
+  width: 100%;
+  background: #147568;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cta-container {
+  width: 100%;
+  min-height: 210px;
+  padding: 34px 3.2% 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 8%;
+}
+
+/* COMPANY DESCRIPTION */
+
+.cta-about h3,
+.cta-links h3 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cta-about p {
+  max-width: 355px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+/* QUICK LINKS */
+
+.cta-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cta-links h3 {
+  margin-bottom: 12px;
+}
+
+.cta-links a {
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.cta-links a:hover {
+  opacity: 0.7;
+}
+
+/* COPYRIGHT */
+
+.cta-bottom {
+  width: 100%;
+  min-height: 42px;
+  padding: 13px 3.3%;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.cta-bottom p {
+  margin: 0;
+  color: #e5f1ef;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .cta-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 30px 4%;
+  }
+
+  .cta-about p {
+    max-width: 300px;
+    font-size: 13px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+  .cta-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 30px 5%;
+  }
+
+  .cta-about h3,
+  .cta-links h3 {
+    font-size: 14px;
+  }
+
+  .cta-about p {
+    max-width: 100%;
+    line-height: 1.5;
+  }
+
+  .cta-links a {
+    margin-bottom: 14px;
+  }
+
+  .cta-bottom {
+    padding: 14px 5%;
+  }
+
+  .cta-bottom p {
+    font-size: 11px;
+  }
+}

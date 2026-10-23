@@ -1,0 +1,198 @@
+/* =========================================
+   JAI PHARMACEUTICALS
+   ABOUT US SECTION
+========================================= */
+
+.about-section {
+  width: 100%;
+  padding: 66px 3.6% 60px;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 6%;
+}
+
+/* ABOUT IMAGE */
+
+.about-image-wrapper {
+  width: 100%;
+  height: 365px;
+  overflow: hidden;
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ABOUT CONTENT */
+
+.about-content {
+  width: 100%;
+}
+
+.about-label {
+  margin: 0 0 28px;
+  color: #147568;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.about-content h2 {
+  margin: 0 0 27px;
+  color: #071d2d;
+  font-size: clamp(25px, 2.5vw, 29px);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.about-description {
+  margin: 0 0 27px;
+  color: #858585;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.27;
+}
+
+/* MISSION AND VISION CARDS */
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+
+.about-card {
+  min-height: 123px;
+  padding: 24px 12px 18px;
+  background: #eaf7f6;
+  border-radius: 9px;
+}
+
+.about-card h3 {
+  margin: 0 0 16px;
+  color: #147568;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.about-card p {
+  margin: 0;
+  color: #858585;
+  font-size: 11.5px;
+  line-height: 1.25;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .about-section {
+    padding: 50px 4%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 4%;
+  }
+
+  .about-image-wrapper {
+    height: 330px;
+  }
+
+  .about-label {
+    margin-bottom: 18px;
+  }
+
+  .about-content h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .about-description {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .about-cards {
+    gap: 14px;
+  }
+
+  .about-card {
+    padding: 18px 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .about-section {
+    padding: 42px 5%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-image-wrapper {
+    height: auto;
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .about-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .about-cards {
+    gap: 16px;
+  }
+
+  .about-card {
+    min-height: 130px;
+    padding: 18px 14px;
+  }
+
+  .about-card h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .about-card p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .about-card {
+    min-height: auto;
+  }
+}
