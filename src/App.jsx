@@ -4,9 +4,10 @@ import "./App.css";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Products from "./components/Products";
-import Gallery from "./components/Gallery";
+
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CloserLook from "./components/VisualGallery";
 
 const FloatingWhatsApp = () => {
   const phoneNumber = "919876543210"; // CHANGE TO YOUR NUMBER
@@ -46,7 +47,7 @@ function App() {
       <section id="home"><Hero /></section>
       <section id="about"><About /></section>
       <section id="products"><Products /></section>
-      <section id="gallery"><Gallery /></section>
+      <section id="gallery"><CloserLook /></section>
       <section id="contact"><Contact /></section>
       
       <Footer />

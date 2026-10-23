@@ -1,6 +1,6 @@
 
-/* Main Section */
-.closer-look {
+/* Main gallery section */
+.cl-gallery-section {
   width: 100%;
   box-sizing: border-box;
   padding: 60px 24px;
@@ -8,56 +8,54 @@
   overflow: hidden;
 }
 
-.closer-container {
+.cl-gallery-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Heading */
-.closer-header {
+.cl-gallery-heading {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.closer-tag {
-  display: inline-block;
+.cl-gallery-eyebrow {
   color: #a66c45;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;
-  margin-bottom: 8px;
 }
 
-.closer-header h2 {
-  margin: 0 0 12px;
+.cl-gallery-title {
+  margin: 0;
+  color: #29231f;
   font-size: clamp(24px, 3vw, 34px);
   font-weight: 700;
-  color: #29231f;
 }
 
-.closer-header p {
+.cl-gallery-description {
   margin: 0;
   color: #80766e;
   font-size: 15px;
   line-height: 1.6;
 }
 
-/* Carousel Frame */
-.carousel-wrapper {
+/* Carousel frame */
+.cl-gallery-carousel {
   position: relative;
   width: 100%;
   margin-top: 32px;
 }
 
-.carousel-viewport {
+.cl-gallery-viewport {
   width: 100%;
   overflow: hidden;
 }
 
-.carousel-track {
+.cl-gallery-track {
   display: flex;
   gap: 20px;
   width: max-content;
@@ -65,18 +63,18 @@
   will-change: transform;
 }
 
-/* Individual Image Cards */
-.gallery-card {
+/* Individual cards */
+.cl-gallery-card {
   position: relative;
+  flex-shrink: 0;
   width: 256px;
   height: 310px;
-  flex-shrink: 0;
   overflow: hidden;
   border-radius: 14px;
   background: #eee4db;
 }
 
-.gallery-card img {
+.cl-gallery-image {
   display: block;
   width: 100%;
   height: 100%;
@@ -84,74 +82,69 @@
   transition: transform 0.6s ease;
 }
 
-.gallery-card:hover img {
+.cl-gallery-card:hover .cl-gallery-image {
   transform: scale(1.07);
 }
 
-/* Image Number */
-.image-number {
+/* Image numbering */
+.cl-gallery-image-number {
   position: absolute;
   bottom: 14px;
   left: 14px;
   padding: 7px 11px;
-  color: white;
+  color: #fff;
   font-size: 12px;
   font-weight: 600;
   background: rgba(30, 20, 15, 0.6);
   border-radius: 20px;
 }
 
-/* Side Navigation Buttons */
-.carousel-btn {
+/* Left and right arrow buttons */
+.cl-gallery-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   z-index: 5;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 44px;
   height: 44px;
   padding: 0;
-
   border: 1px solid #e0d4ca;
   border-radius: 50%;
-  background: #ffffff;
+  background: #fff;
   color: #39291f;
-
   font-size: 24px;
   line-height: 1;
   cursor: pointer;
-
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-50%);
   transition:
     background 0.3s ease,
     color 0.3s ease,
     opacity 0.3s ease;
 }
 
-.carousel-btn-left {
+.cl-gallery-arrow-left {
   left: 12px;
 }
 
-.carousel-btn-right {
+.cl-gallery-arrow-right {
   right: 12px;
 }
 
-.carousel-btn:hover:not(:disabled) {
+.cl-gallery-arrow:hover:not(:disabled) {
   background: #39291f;
-  color: #ffffff;
+  color: #fff;
 }
 
-.carousel-btn:disabled {
+.cl-gallery-arrow:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }
 
-/* Progress Bar */
-.carousel-progress {
+/* Progress indicator */
+.cl-gallery-progress {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -161,7 +154,7 @@
   font-weight: 600;
 }
 
-.progress-line {
+.cl-gallery-progress-track {
   flex: 1;
   height: 3px;
   overflow: hidden;
@@ -169,7 +162,7 @@
   border-radius: 5px;
 }
 
-.progress-fill {
+.cl-gallery-progress-fill {
   height: 100%;
   background: #9c6b49;
   border-radius: 5px;
@@ -178,11 +171,11 @@
 
 /* Tablet */
 @media (max-width: 768px) {
-  .closer-look {
+  .cl-gallery-section {
     padding: 45px 20px;
   }
 
-  .gallery-card {
+  .cl-gallery-card {
     width: 240px;
     height: 290px;
   }
@@ -190,38 +183,38 @@
 
 /* Mobile */
 @media (max-width: 480px) {
-  .closer-look {
+  .cl-gallery-section {
     padding: 35px 14px;
   }
 
-  .closer-header h2 {
+  .cl-gallery-title {
     font-size: 23px;
   }
 
-  .closer-header p {
+  .cl-gallery-description {
     font-size: 13px;
   }
 
-  .gallery-card {
+  .cl-gallery-card {
     width: 220px;
     height: 260px;
   }
 
-  .carousel-track {
+  .cl-gallery-track {
     gap: 16px;
   }
 
-  .carousel-btn {
+  .cl-gallery-arrow {
     width: 36px;
     height: 36px;
     font-size: 20px;
   }
 
-  .carousel-btn-left {
+  .cl-gallery-arrow-left {
     left: 8px;
   }
 
-  .carousel-btn-right {
+  .cl-gallery-arrow-right {
     right: 8px;
   }
 }
