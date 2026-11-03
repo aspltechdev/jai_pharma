@@ -3,11 +3,10 @@ import "./App.css";
 
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Products from "./components/Products";
-
+import { default as Products } from "./components/Products.jsx"
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import CloserLook from "./components/VisualGallery";
+import CloserLook from "./components/Gallery";
 
 const FloatingWhatsApp = () => {
   const phoneNumber = "919876543210"; // CHANGE TO YOUR NUMBER

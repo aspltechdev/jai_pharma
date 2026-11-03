@@ -24,7 +24,6 @@ const Contact = () => {
 
     window.addEventListener('productEnquiry', handleProductEnquiry);
 
-    // Also check if product saved in localStorage (backup)
     const savedProduct = localStorage.getItem('enquiryProduct');
     if (savedProduct) {
       setFormData((prev) => ({
@@ -96,9 +95,35 @@ const Contact = () => {
                 Thuthipattu, Gingee Taluk, Viluppuram,
                 Tamil Nadu – 605201
               </p>
+
+              {/* --- MAP --- */}
+              <div className="contact-map-wrap">
+                <iframe
+                  title="Jai Pharmaceuticals Location"
+                  src="https://maps.google.com/maps?q=12.1827,79.3245&z=14&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+                <div className="contact-map-badge">
+                  📍 JAI PHARMACEUTICALS
+                </div>
+              </div>
+
+              <a
+                className="contact-map-link"
+                href="https://www.google.com/maps/search/?api=1&query=12.1827,79.3245"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on Google Maps ↗
+              </a>
             </div>
 
-            <div className="contact-info-block contact-location">
+            <div className="contact-info-block">
               <h3>WhatsApp Enquiries</h3>
               <p>+91 97910 60803</p>
               <a
@@ -171,10 +196,7 @@ const Contact = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              className="contact-submit-button"
-            >
+            <button type="submit" className="contact-submit-button">
               Submit Enquiry via WhatsApp
             </button>
 
