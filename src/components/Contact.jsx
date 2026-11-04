@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect } from "react";
 import "./Contact.css";
 
-const WHATSAPP_NUMBER = "919791060803";
+const WEB3FORMS_ACCESS_KEY = "9bc077d8-e957-4df3-b865-67e0f85225b9";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,10 +12,14 @@ const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
   // Auto-fill when Enquiry clicked from Products
   useEffect(() => {
     const handleProductEnquiry = (event) => {
       const productName = event.detail;
+
       setFormData((prev) => ({
         ...prev,
         enquiryType: productName,
@@ -22,65 +27,97 @@ const Contact = () => {
       }));
     };
 
-    window.addEventListener('productEnquiry', handleProductEnquiry);
+    window.addEventListener("productEnquiry", handleProductEnquiry);
 
-    const savedProduct = localStorage.getItem('enquiryProduct');
+    const savedProduct = localStorage.getItem("enquiryProduct");
+
     if (savedProduct) {
       setFormData((prev) => ({
         ...prev,
         enquiryType: savedProduct,
         message: `Hello, I want to enquire about: ${savedProduct}\n\nPlease share details like price, availability and packing.`,
       }));
-      localStorage.removeItem('enquiryProduct');
+
+      localStorage.removeItem("enquiryProduct");
     }
 
     return () => {
-      window.removeEventListener('productEnquiry', handleProductEnquiry);
+      window.removeEventListener("productEnquiry", handleProductEnquiry);
     };
   }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((previous) => ({
-      ...previous,
+
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (event) => {
+  // Submit using Web3Forms
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const whatsappMessage = [
-      "Hello JAI PHARMACEUTICALS!",
-      "",
-      "New Website Enquiry",
-      "--------------------",
-      `Name: ${formData.name}`,
-      `Email: ${formData.email}`,
-      `Enquiry Type: ${formData.enquiryType}`,
-      `Message: ${formData.message}`,
-    ].join("\n");
+    setLoading(true);
+    setStatus("");
 
-    const whatsappUrl =
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        whatsappMessage
-      )}`;
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Enquiry - ${formData.enquiryType}`,
+          from_name: "JAI PHARMACEUTICALS Website",
+          name: formData.name,
+          email: formData.email,
+          enquiry_type: formData.enquiryType,
+          message: formData.message,
+        }),
+      });
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setStatus("success");
+
+        setFormData({
+          name: "",
+          email: "",
+          enquiryType: "General Enquiry",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
+
         <div className="contact-left">
           <p className="contact-eyebrow">Contact Us</p>
+
           <h2>Let’s Connect</h2>
+
           <p className="contact-intro">
             Have a product or business enquiry? Use the form below
             to send us your message.
           </p>
 
           <div className="contact-info-card">
+
             <div className="contact-info-block">
               <h3>JAI PHARMACEUTICALS</h3>
               <p>
@@ -91,23 +128,24 @@ const Contact = () => {
 
             <div className="contact-info-block contact-location">
               <h3>Location</h3>
+
               <p>
                 Thuthipattu, Gingee Taluk, Viluppuram,
                 Tamil Nadu – 605201
               </p>
 
-              {/* --- MAP --- */}
               <div className="contact-map-wrap">
                 <iframe
                   title="Jai Pharmaceuticals Location"
                   src="https://maps.google.com/maps?q=12.1827,79.3245&z=14&output=embed"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, display: 'block' }}
+                  style={{ border: 0, display: "block" }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+
                 <div className="contact-map-badge">
                   📍 JAI PHARMACEUTICALS
                 </div>
@@ -126,15 +164,17 @@ const Contact = () => {
             <div className="contact-info-block">
               <h3>WhatsApp Enquiries</h3>
               <p>+91 97910 60803</p>
+
               <a
                 className="contact-whatsapp-link"
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                href="https://wa.me/919791060803"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Chat on WhatsApp ↗
               </a>
             </div>
+
           </div>
         </div>
 
@@ -142,8 +182,10 @@ const Contact = () => {
           <h3>Send An Enquiry</h3>
 
           <form onSubmit={handleSubmit}>
+
             <div className="contact-form-group">
               <label htmlFor="contact-name">Full Name</label>
+
               <input
                 type="text"
                 id="contact-name"
@@ -158,6 +200,7 @@ const Contact = () => {
 
             <div className="contact-form-group">
               <label htmlFor="contact-email">Email Address</label>
+
               <input
                 type="email"
                 id="contact-email"
@@ -171,7 +214,10 @@ const Contact = () => {
             </div>
 
             <div className="contact-form-group">
-              <label htmlFor="contact-type">Enquiry Type / Product</label>
+              <label htmlFor="contact-type">
+                Enquiry Type / Product
+              </label>
+
               <input
                 type="text"
                 id="contact-type"
@@ -185,6 +231,7 @@ const Contact = () => {
 
             <div className="contact-form-group">
               <label htmlFor="contact-message">Message</label>
+
               <textarea
                 id="contact-message"
                 name="message"
@@ -196,16 +243,34 @@ const Contact = () => {
               />
             </div>
 
-            <button type="submit" className="contact-submit-button">
-              Submit Enquiry via WhatsApp
+            <button
+              type="submit"
+              className="contact-submit-button"
+              disabled={loading}
+            >
+              {loading ? "Sending Enquiry..." : "Submit Enquiry"}
             </button>
 
+            {status === "success" && (
+              <p className="contact-success-message" role="status">
+                ✓ Your enquiry has been submitted successfully!
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="contact-error-message" role="alert">
+                Something went wrong. Please try again.
+              </p>
+            )}
+
             <p className="contact-form-note">
-              Clicking submit opens WhatsApp with your enquiry
-              details. Please press Send in WhatsApp to deliver it.
+              Your enquiry will be sent directly to our email.
+              Our team will contact you soon.
             </p>
+
           </form>
         </div>
+
       </div>
     </section>
   );
