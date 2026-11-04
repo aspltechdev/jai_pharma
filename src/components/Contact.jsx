@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Contact.css";
 
-const WEB3FORMS_ACCESS_KEY = "9bc077d8-e957-4df3-b865-67e0f85225b9";
+const WEB3FORMS_ACCESS_KEY = "56e71f42-e185-455c-90c0-1fa42f0949f2";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
