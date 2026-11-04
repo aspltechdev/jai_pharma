@@ -43,11 +43,22 @@ function About() {
             </div>
           </div>
 
-          <div className="about-stats">
-            <div><b>500+</b><span>Products</span></div>
-            <div><b>10k+</b><span>Happy Customers</span></div>
-            <div><b>100%</b><span>Quality Checked</span></div>
+          {/* STATS - NO SYMBOLS / NO ICONS AT ALL */}
+          <div className="about-stats-new">
+            <div className="stat-item-new">
+              <h3>500+</h3>
+              <p>Products</p>
+            </div>
+            <div className="stat-item-new">
+              <h3>10k+</h3>
+              <p>Happy Customers</p>
+            </div>
+            <div className="stat-item-new">
+              <h3>100%</h3>
+              <p>Quality Checked</p>
+            </div>
           </div>
+
         </div>
 
       </div>

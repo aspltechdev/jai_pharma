@@ -1,11 +1,19 @@
 import React from "react";
 import "./Hero.css";
 import logo from "../assets/logo.png";
-import heroImage from "../assets/heroimage.png"; // <-- HERE, top with other imports
-
+import heroImage from "../assets/heroimage.png";
+import heroBg from "../assets/products/herobg.jpg";
 const Hero = () => {
   return (
-    <section className="hero-section">
+    <section
+      className="hero-section"
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <nav className="hero-navbar">
         <a href="#home" className="hero-logo">
           <img src={logo} alt="Jai Pharmaceuticals Logo" />

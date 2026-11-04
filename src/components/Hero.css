@@ -1,16 +1,12 @@
-
 /* ==========================================
-   JAI PHARMACEUTICALS - PREMIUM HERO DESIGN
+   JAI PHARMA - HERO - BLENDED, NO WHITE BOX
+   Background + Overlay + Keywords + Right Image
 ========================================== */
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* SECTION - herobg BLENDED */
 .hero-section {
   width: 100%;
   min-height: 100vh;
@@ -19,40 +15,30 @@ html {
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
   color: #153d32;
-  background:
-    radial-gradient(ellipse at 5% 15%, rgba(190, 159, 99, 0.18), transparent 35%),
-    radial-gradient(ellipse at 95% 85%, rgba(35, 128, 100, 0.16), transparent 35%),
-    linear-gradient(125deg, #e7f4ed, #fafffb 50%, #e4f1e9);
+  background-color: #eef5ef;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
 
+/* OVERLAY - This does the blend. Left = solid for text, Right = clear for photo */
 .hero-section::before {
   content: "";
   position: absolute;
-  width: 450px;
-  height: 450px;
-  border: 1px solid rgba(22, 91, 66, 0.13);
-  border-radius: 50%;
-  top: 140px;
-  right: -210px;
-  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.98) 0%,
+    rgba(250,252,250,0.96) 38%,
+    rgba(240,248,243,0.72) 55%,
+    rgba(240,248,243,0.30) 72%,
+    rgba(23,107,85,0.05) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
 }
 
-.hero-section::after {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border: 1px solid rgba(174, 135, 66, 0.2);
-  border-radius: 50%;
-  bottom: -150px;
-  left: -90px;
-  z-index: -1;
-}
-
-/* ==========================================
-   NAVIGATION
-========================================== */
-
+/* NAVBAR */
 .hero-navbar {
   width: 100%;
   min-height: 88px;
@@ -63,16 +49,10 @@ html {
   gap: 25px;
   position: relative;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.94);
-  border-bottom: 1px solid rgba(23, 76, 55, 0.08);
-  box-shadow: 0 8px 30px rgba(23, 63, 43, 0.07);
+  background: rgba(255,255,255,0.94);
+  border-bottom: 1px solid rgba(23,76,55,0.08);
+  box-shadow: 0 8px 30px rgba(23,63,43,0.07);
   backdrop-filter: blur(15px);
-}
-
-.hero-logo {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
 }
 
 .hero-logo img {
@@ -80,17 +60,11 @@ html {
   height: 68px;
   display: block;
   object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.hero-logo img:hover {
-  transform: scale(1.06);
 }
 
 .hero-nav-links {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: clamp(20px, 3.5vw, 48px);
 }
 
@@ -101,7 +75,6 @@ html {
   font-size: 14px;
   font-weight: 600;
   padding: 12px 0;
-  transition: color 0.3s ease;
 }
 
 .hero-nav-links a::after {
@@ -115,15 +88,8 @@ html {
   transition: width 0.3s ease;
 }
 
-.hero-nav-links a:hover {
-  color: #b18a47;
-}
-
-.hero-nav-links a:hover::after {
-  width: 100%;
-}
-
-/* SHOP BUTTON */
+.hero-nav-links a:hover { color: #b18a47; }
+.hero-nav-links a:hover::after { width: 100%; }
 
 .shop-button {
   display: inline-flex;
@@ -137,20 +103,16 @@ html {
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 8px 20px rgba(23, 107, 85, 0.2);
+  box-shadow: 0 8px 20px rgba(23,107,85,0.2);
   transition: all 0.3s ease;
 }
 
 .shop-button:hover {
   background: linear-gradient(135deg, #b18a47, #95703b);
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(177, 138, 71, 0.25);
 }
 
-/* ==========================================
-   HERO MAIN LAYOUT
-========================================== */
-
+/* HERO LAYOUT */
 .hero-content {
   width: 100%;
   max-width: 1600px;
@@ -165,16 +127,21 @@ html {
   z-index: 2;
 }
 
-/* ==========================================
-   LEFT CONTENT
-========================================== */
-
+/* LEFT - NO WHITE BOX, TEXT BLENDS DIRECTLY */
 .hero-text {
   max-width: 680px;
   min-width: 0;
   animation: jaiTextEntry 0.9s ease both;
+  /* REMOVED WHITE BOX */
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* KEYWORDS */
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -201,6 +168,7 @@ html {
   font-weight: 850;
   line-height: 1.12;
   letter-spacing: -2px;
+  text-shadow: 0 2px 18px rgba(255,255,255,0.9);
 }
 
 .hero-text h1 span {
@@ -211,15 +179,14 @@ html {
 .hero-description {
   max-width: 500px;
   margin: 27px 0 32px;
-  color: #6d8277;
+  color: #43584e;
   font-size: 16px;
   line-height: 1.9;
+  font-weight: 500;
+  text-shadow: 0 1px 12px rgba(255,255,255,0.9);
 }
 
-/* ==========================================
-   HERO BUTTONS
-========================================== */
-
+/* BUTTONS */
 .hero-buttons {
   display: flex;
   align-items: center;
@@ -244,48 +211,35 @@ html {
 
 .primary-button {
   background: linear-gradient(135deg, #173f32, #14765f);
-  color: #ffffff;
-  border: 1px solid transparent;
-  box-shadow: 0 9px 23px rgba(23, 63, 50, 0.2);
+  color: #fff;
+  box-shadow: 0 9px 23px rgba(23,63,50,0.2);
 }
 
-.primary-button span {
-  font-size: 22px;
-  transition: transform 0.3s ease;
-}
+.primary-button span { font-size: 22px; }
 
 .primary-button:hover {
   background: linear-gradient(135deg, #b18a47, #96703c);
   transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(177, 138, 71, 0.25);
-}
-
-.primary-button:hover span {
-  transform: translateX(5px);
 }
 
 .secondary-button {
   color: #174d3c;
   border: 1.5px solid #4b7968;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255,255,255,0.85);
 }
 
 .secondary-button:hover {
-  background: #ffffff;
+  background: #fff;
   border-color: #b18a47;
   color: #a17c3e;
   transform: translateY(-4px);
 }
 
-/* ==========================================
-   BENEFITS
-========================================== */
-
+/* BENEFITS */
 .hero-benefits {
   margin-top: 36px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 14px 20px;
 }
 
@@ -298,30 +252,17 @@ html {
   font-weight: 600;
 }
 
-.hero-benefits b {
-  color: #159779;
-  font-size: 19px;
-}
+.hero-benefits b { color: #159779; font-size: 19px; }
 
-/* ==========================================
-   RIGHT SIDE IMAGE
-========================================== */
-
+/* RIGHT IMAGE - YOUR PREVIOUS IMAGE */
 .hero-image-wrapper {
   width: 100%;
   height: 490px;
   position: relative;
   padding: 9px;
   border-radius: 30px;
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #c7a56a 40%,
-    #18715b 100%
-  );
-  box-shadow:
-    0 28px 60px rgba(21, 68, 49, 0.17),
-    0 8px 20px rgba(21, 68, 49, 0.08);
+  background: linear-gradient(135deg, #ffffff 0%, #c7a56a 40%, #18715b 100%);
+  box-shadow: 0 28px 60px rgba(21,68,49,0.17);
   animation: jaiImageEntry 1s ease both;
   animation-delay: 0.2s;
 }
@@ -333,7 +274,7 @@ html {
   height: 115px;
   top: -30px;
   right: -30px;
-  border: 1px solid rgba(177, 138, 71, 0.6);
+  border: 1px solid rgba(177,138,71,0.6);
   border-radius: 50%;
   z-index: -1;
 }
@@ -345,16 +286,7 @@ html {
   object-fit: cover;
   object-position: center;
   border-radius: 22px;
-  transition: transform 0.6s ease;
 }
-
-.hero-image-wrapper:hover .hero-image {
-  transform: scale(1.015);
-}
-
-/* ==========================================
-   FLOATING IMAGE INFORMATION CARD
-========================================== */
 
 .hero-image-card {
   position: absolute;
@@ -364,15 +296,9 @@ html {
   width: 84%;
   padding: 20px 23px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 15px 35px rgba(17, 57, 39, 0.15);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 15px 35px rgba(17,57,39,0.15);
   backdrop-filter: blur(15px);
-  transition: transform 0.35s ease;
-}
-
-.hero-image-wrapper:hover .hero-image-card {
-  transform: translateY(-5px);
 }
 
 .hero-image-card h3 {
@@ -390,216 +316,41 @@ html {
   line-height: 1.6;
 }
 
-/* ==========================================
-   ANIMATIONS
-========================================== */
-
 @keyframes jaiTextEntry {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes jaiImageEntry {
-  from {
-    opacity: 0;
-    transform: translateX(35px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(35px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-/* ==========================================
-   TABLET RESPONSIVE
-========================================== */
-
+/* TABLET */
 @media (max-width: 1000px) {
-  .hero-navbar {
-    padding: 10px 3%;
-    gap: 15px;
-  }
-
-  .hero-nav-links {
-    gap: 18px;
-  }
-
-  .hero-content {
-    min-height: 570px;
-    padding: 50px 4%;
-    gap: 4%;
-  }
-
-  .hero-text h1 {
-    font-size: clamp(36px, 4.5vw, 49px);
-  }
-
-  .hero-description {
-    font-size: 14px;
-  }
-
-  .hero-image-wrapper {
-    height: 380px;
-  }
-
-  .hero-benefits {
-    gap: 10px;
-  }
-
-  .hero-benefits span {
-    font-size: 11px;
-  }
+  .hero-content { min-height: 570px; padding: 50px 4%; gap: 4%; }
+  .hero-text h1 { font-size: clamp(36px, 4.5vw, 49px); }
+  .hero-image-wrapper { height: 380px; }
 }
 
-/* ==========================================
-   MOBILE RESPONSIVE
-========================================== */
-
+/* MOBILE */
 @media (max-width: 650px) {
-  .hero-navbar {
-    min-height: 70px;
-    padding: 8px 5%;
-    flex-wrap: wrap;
+  .hero-navbar { min-height: 70px; padding: 8px 5%; flex-wrap: wrap; }
+  .hero-logo img { width: 70px; height: 50px; }
+  .hero-nav-links { order: 3; width: 100%; padding: 10px 0; gap: 0; justify-content: space-between; overflow-x: auto; }
+  .hero-nav-links a { font-size: 12px; white-space: nowrap; }
+  .shop-button { padding: 11px 18px; font-size: 12px; }
+  .hero-content { grid-template-columns: 1fr; gap: 42px; padding: 48px 5% 60px; }
+
+  .hero-section::before {
+    background: linear-gradient(180deg,
+      rgba(255,255,255,0.98) 0%,
+      rgba(255,255,255,0.88) 55%,
+      rgba(255,255,255,0.55) 100%
+    );
   }
 
-  .hero-logo img {
-    width: 70px;
-    height: 50px;
-  }
-
-  .hero-nav-links {
-    order: 3;
-    width: 100%;
-    padding: 10px 0;
-    gap: 0;
-    justify-content: space-between;
-    overflow-x: auto;
-  }
-
-  .hero-nav-links a {
-    font-size: 12px;
-    white-space: nowrap;
-  }
-
-  .shop-button {
-    padding: 11px 18px;
-    font-size: 12px;
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 42px;
-    padding: 48px 5% 60px;
-  }
-
-  .hero-eyebrow {
-    font-size: 12px;
-    margin-bottom: 18px;
-  }
-
-  .hero-text h1 {
-    font-size: clamp(37px, 9vw, 49px);
-    letter-spacing: -1px;
-  }
-
-  .hero-description {
-    margin: 22px 0;
-    font-size: 14px;
-  }
-
-  .hero-buttons {
-    gap: 12px;
-  }
-
-  .primary-button,
-  .secondary-button {
-    font-size: 12px;
-  }
-
-  .hero-benefits {
-    margin-top: 26px;
-    gap: 12px 14px;
-  }
-
-  .hero-image-wrapper {
-    height: 340px;
-    border-radius: 23px;
-  }
-
-  .hero-image {
-    border-radius: 16px;
-  }
-
-  .hero-image-card {
-    right: 5%;
-    bottom: 18px;
-    width: 90%;
-    padding: 15px;
-  }
-
-  .hero-image-card h3 {
-    font-size: 13px;
-  }
-
-  .hero-image-card p {
-    font-size: 11px;
-  }
-}
-
-/* ==========================================
-   SMALL MOBILE
-========================================== */
-
-@media (max-width: 380px) {
-  .hero-nav-links a {
-    font-size: 11px;
-  }
-
-  .hero-text h1 {
-    font-size: 33px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .primary-button,
-  .secondary-button {
-    width: 100%;
-  }
-
-  .hero-image-wrapper {
-    height: 290px;
-  }
-
-  .hero-benefits span {
-    white-space: normal;
-  }
-}
-
-/* ==========================================
-   ACCESSIBILITY
-========================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-text,
-  .hero-image-wrapper {
-    animation: none;
-  }
-
-  .hero-image,
-  .hero-image-card,
-  .hero-buttons a,
-  .shop-button {
-    transition: none;
-  }
+  .hero-text h1 { font-size: clamp(37px, 9vw, 49px); letter-spacing: -1px; }
+  .hero-image-wrapper { height: 340px; border-radius: 23px; }
+  .hero-image-card { right: 5%; bottom: 18px; width: 90%; padding: 15px; }
 }
