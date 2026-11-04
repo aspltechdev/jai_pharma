@@ -1,198 +1,60 @@
-/* =========================================
-   JAI PHARMACEUTICALS
-   ABOUT US SECTION
-========================================= */
-
-.about-section {
-  width: 100%;
-  padding: 66px 3.6% 60px;
-  background: #ffffff;
+.about-section{
+  width:100%;
+  padding:90px 5%;
+  background: linear-gradient(125deg,#e7f4ed,#fafffb 50%,#e4f1e9);
   font-family: Arial, Helvetica, sans-serif;
+  overflow:hidden;
 }
-
-.about-container {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  align-items: center;
-  gap: 6%;
+.about-container{
+  max-width:1250px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:60px; align-items:center;
 }
-
-/* ABOUT IMAGE */
-
-.about-image-wrapper {
-  width: 100%;
-  height: 365px;
-  overflow: hidden;
+/* IMAGE */
+.about-image-wrapper{
+  position:relative; height:520px;
+  border-radius:28px; padding:10px;
+  background: linear-gradient(135deg,#fff 0%,#c7a56a 45%,#18715b 100%);
+  box-shadow:0 28px 60px rgba(21,68,49,.18);
 }
-
-.about-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.about-image{width:100%; height:100%; object-fit:cover; border-radius:20px; display:block;}
+.about-float-card{
+  position:absolute; left:-25px; bottom:35px;
+  background:#fff; padding:18px 22px; border-radius:16px;
+  display:flex; gap:12px; align-items:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
-
-/* ABOUT CONTENT */
-
-.about-content {
-  width: 100%;
+.about-float-card span{font-size:32px; font-weight:900; color:#14765f;}
+.about-float-card p{margin:0; font-size:13px; font-weight:700; color:#173e32; line-height:1.4;}
+.about-float-badge{
+  position:absolute; top:22px; right:-12px;
+  background:#173f32; color:#fff; padding:10px 16px;
+  border-radius:50px; font-size:12px; font-weight:700;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
-
-.about-label {
-  margin: 0 0 28px;
-  color: #147568;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
+/* TEXT */
+.about-eyebrow{color:#a47e3e; font-size:13px; font-weight:800; letter-spacing:2.5px;}
+.about-content h2{font-size:clamp(32px,3.5vw,46px); line-height:1.15; color:#173e32; margin:16px 0 18px; letter-spacing:-1px;}
+.about-content h2 span{color:#16806b;}
+.about-desc{color:#6d8277; font-size:16px; line-height:1.85; max-width:540px;}
+.about-cards{display:flex; gap:16px; margin-top:28px;}
+.about-card{
+  flex:1; background:#e8f3ee; padding:22px; border-radius:16px;
+  border:1px solid transparent; transition:all .3s ease;
 }
+.about-card:hover{transform:translateY(-6px); background:#fff; border-color:#c7a56a; box-shadow:0 15px 30px rgba(21,68,49,.12);}
+.about-card.gold{background:#fdf6e8;}
+.about-icon{font-size:26px; margin-bottom:10px;}
+.about-card h3{margin:0 0 8px; color:#174a38; font-size:17px;}
+.about-card p{margin:0; color:#6d8277; font-size:13.5px; line-height:1.6;}
+.about-stats{display:flex; gap:35px; margin-top:30px; padding-top:22px; border-top:1px solid rgba(23,76,55,.12);}
+.about-stats div{display:flex; flex-direction:column;}
+.about-stats b{font-size:24px; color:#173e32;}
+.about-stats span{font-size:12px; color:#6d8277; margin-top:4px;}
 
-.about-content h2 {
-  margin: 0 0 27px;
-  color: #071d2d;
-  font-size: clamp(25px, 2.5vw, 29px);
-  font-weight: 750;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-}
-
-.about-description {
-  margin: 0 0 27px;
-  color: #858585;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.27;
-}
-
-/* MISSION AND VISION CARDS */
-
-.about-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10%;
-}
-
-.about-card {
-  min-height: 123px;
-  padding: 24px 12px 18px;
-  background: #eaf7f6;
-  border-radius: 9px;
-}
-
-.about-card h3 {
-  margin: 0 0 16px;
-  color: #147568;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.about-card p {
-  margin: 0;
-  color: #858585;
-  font-size: 11.5px;
-  line-height: 1.25;
-}
-
-/* TABLET */
-
-@media (max-width: 900px) {
-  .about-section {
-    padding: 50px 4%;
-  }
-
-  .about-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 4%;
-  }
-
-  .about-image-wrapper {
-    height: 330px;
-  }
-
-  .about-label {
-    margin-bottom: 18px;
-  }
-
-  .about-content h2 {
-    font-size: 24px;
-    margin-bottom: 18px;
-  }
-
-  .about-description {
-    font-size: 13px;
-    margin-bottom: 20px;
-  }
-
-  .about-cards {
-    gap: 14px;
-  }
-
-  .about-card {
-    padding: 18px 12px;
-  }
-}
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-  .about-section {
-    padding: 42px 5%;
-  }
-
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .about-image-wrapper {
-    height: auto;
-    aspect-ratio: 1.35 / 1;
-  }
-
-  .about-content h2 {
-    font-size: 28px;
-    line-height: 1.25;
-  }
-
-  .desktop-break {
-    display: none;
-  }
-
-  .about-description {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .about-cards {
-    gap: 16px;
-  }
-
-  .about-card {
-    min-height: 130px;
-    padding: 18px 14px;
-  }
-
-  .about-card h3 {
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-
-  .about-card p {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 380px) {
-  .about-cards {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .about-card {
-    min-height: auto;
-  }
+@media(max-width:850px){
+  .about-container{grid-template-columns:1fr; gap:40px;}
+  .about-image-wrapper{height:360px;}
+  .about-float-card{left:10px;}
+  .about-cards{flex-direction:column;}
 }
