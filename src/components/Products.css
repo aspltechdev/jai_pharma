@@ -1,530 +1,221 @@
-
-/* =====================================
-   JAI PHARMA - PRODUCTS SECTION
-===================================== */
+/* ================= PRODUCTS - LAB MEDICAL THEME ================= */
 
 .jai-products-section {
   position: relative;
-  padding: 100px 5%;
-  background:
-    radial-gradient(circle at 5% 10%, rgba(180, 145, 75, 0.09), transparent 30%),
-    radial-gradient(circle at 95% 90%, rgba(38, 91, 59, 0.09), transparent 30%),
-    linear-gradient(135deg, #f5f8f3, #ffffff 50%, #f0f5ef);
+  padding: 90px 5% 70px;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-.jai-products-container {
-  max-width: 1450px;
-  margin: auto;
-  position: relative;
-  z-index: 1;
-}
-
-/* =====================================
-   SECTION HEADING
-===================================== */
-
-.jai-products-heading {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 65px;
-}
-
-.jai-products-label {
-  display: inline-block;
-  color: #a17c3c;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 16px;
-}
-
-.jai-products-heading h2 {
-  font-size: clamp(36px, 4vw, 54px);
-  line-height: 1.15;
-  font-weight: 850;
-  color: #173d2c;
-  letter-spacing: -1.5px;
-  margin: 0 0 18px;
-}
-
-.jai-products-heading h2 span {
-  color: #a47f40;
-}
-
-.jai-products-heading p {
-  color: #77857b;
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 600px;
-  margin: auto;
-}
-
-.jai-heading-decoration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  margin-top: 25px;
-}
-
-.jai-heading-decoration span {
-  display: block;
-  height: 4px;
-  border-radius: 10px;
-  background: #a78343;
-}
-
-.jai-heading-decoration span:nth-child(1),
-.jai-heading-decoration span:nth-child(3) {
-  width: 18px;
-  opacity: 0.5;
-}
-
-.jai-heading-decoration span:nth-child(2) {
-  width: 55px;
-}
-
-/* =====================================
-   PRODUCT GRID
-===================================== */
-
-.jai-products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
-}
-
-/* =====================================
-   PRODUCT CARD
-===================================== */
-
-.jai-product-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #e5ece4;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 8px 28px rgba(24, 63, 43, 0.055);
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
-}
-
-.jai-product-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(167, 131, 67, 0.45);
-  box-shadow: 0 22px 45px rgba(24, 63, 43, 0.12);
-}
-
-/* =====================================
-   PRODUCT IMAGE AREA
-===================================== */
-
-.jai-product-image {
-  height: 290px;
-  margin: 13px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    145deg,
-    #f0f5ef,
-    #ffffff 65%,
-    #f8f4eb
-  );
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.jai-product-image::after {
+/* Teal medical overlay on top of lab photo */
+.jai-products-section::before {
   content: "";
   position: absolute;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10, 70, 60, 0.15) 0%,
+    rgba(20, 120, 100, 0.12) 40%,
+    rgba(200, 240, 230, 0.55) 100%);
+  z-index: 0;
+}
+
+/* Soft blur glow */
+.jai-products-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 300px at 20% 20%, rgba(255,255,255,0.35), transparent 70%),
+              radial-gradient(600px 300px at 85% 80%, rgba(0,180,150,0.18), transparent 70%);
+  z-index: 0;
   pointer-events: none;
 }
 
-.jai-product-image-inner {
+.jai-products-container {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.jai-products-heading { text-align: center; margin-bottom: 42px; }
+.jai-products-label {
+  display: inline-block;
+  color: #0a7a5e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  background: rgba(255,255,255,0.85);
+  padding: 7px 18px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+.jai-products-heading h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #083a2f;
+  margin: 16px 0 8px;
+}
+.jai-products-heading h2 span { color: #0a8a68; }
+.jai-products-heading p {
+  color: #3a4a45;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 15px;
+}
+.jai-heading-decoration { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.jai-heading-decoration span { height: 5px; border-radius: 10px; background: #0a8a68; }
+.jai-heading-decoration span:nth-child(1){ width: 28px; opacity: .4; }
+.jai-heading-decoration span:nth-child(2){ width: 48px; }
+.jai-heading-decoration span:nth-child(3){ width: 28px; opacity: .4; }
+
+/* Grid */
+.jai-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* ✅ GLASS CARD - Like in your screenshot */
+.jai-product-card {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
+  gap: 18px;
+  padding: 28px 22px 26px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.82); /* semi-transparent */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow: 0 18px 40px rgba(0,60,45,0.16);
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.jai-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(0,60,45,0.22);
+  background: rgba(255,255,255,0.92);
 }
 
-.jai-product-image img {
-  width: 100%;
-  height: 100%;
-  max-width: 230px;
-  max-height: 230px;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.jai-product-card:hover .jai-product-image img {
-  transform: scale(1.09);
-}
-
+/* Image side */
+.jai-product-image { position: relative; flex-shrink: 0; width: 148px; }
 .jai-product-number {
   position: absolute;
-  top: 15px;
-  left: 17px;
+  top: -6px;
+  left: -6px;
   z-index: 2;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #a78343;
-}
-
-.jai-image-missing {
-  position: relative;
-  z-index: 2;
-  color: #999;
-  font-size: 12px;
-}
-
-/* =====================================
-   PRODUCT DETAILS
-===================================== */
-
-.jai-product-content {
-  padding: 17px 24px 26px;
-}
-
-.jai-product-category {
-  display: inline-block;
-  color: #a17d3d;
-  background: #f8f4eb;
-  padding: 7px 12px;
-  border-radius: 30px;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  margin-bottom: 13px;
-}
-
-.jai-product-content h3 {
-  font-size: 18px;
-  font-weight: 750;
-  line-height: 1.5;
-  color: #193d2c;
-  min-height: 54px;
-  margin: 0 0 10px;
-}
-
-.jai-product-content p {
-  color: #7c8980;
-  font-size: 14px;
-  line-height: 1.8;
-  min-height: 76px;
-  margin: 0 0 22px;
-}
-
-/* =====================================
-   VIEW PRODUCT BUTTON
-===================================== */
-
-.jai-product-button {
-  width: 100%;
-  min-height: 51px;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #19432f;
-  border: 1px solid #19432f;
-  color: #fff;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.jai-product-button:hover {
-  background: #a78343;
-  border-color: #a78343;
-  box-shadow: 0 8px 20px rgba(167, 131, 67, 0.2);
-}
-
-.jai-product-arrow {
-  font-size: 21px;
-  transition: transform 0.3s ease;
-}
-
-.jai-product-button:hover .jai-product-arrow {
-  transform: translate(4px, -3px);
-}
-
-/* =====================================
-   FOOTER
-===================================== */
-
-.jai-products-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 60px;
-}
-
-.jai-products-footer span {
-  width: 45px;
-  height: 1px;
-  background: #b18a4b;
-}
-
-.jai-products-footer p {
-  color: #66776b;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-align: center;
-  margin: 0;
-}
-
-/* =====================================
-   PRODUCT POPUP
-===================================== */
-
-.jai-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(9, 27, 18, 0.72);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 20px;
-  animation: jaiFadeIn 0.25s ease;
-}
-
-.jai-product-modal {
-  position: relative;
-  background: #fff;
-  border: 1px solid #e7eee7;
-  border-radius: 23px;
-  width: 100%;
-  max-width: 430px;
-  padding: 15px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
-  animation: jaiModalUp 0.35s ease;
-}
-
-.jai-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 5;
-  width: 36px;
-  height: 36px;
-  border: none;
+  width: 46px; height: 46px;
   border-radius: 50%;
-  background: #19432f;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  background: #0a7a5e;
+  color: #fff;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
-
-.jai-modal-close:hover {
-  background: #a78343;
+.jai-product-image-inner {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  height: 190px;
+  display: grid; place-items: center;
+  overflow: hidden;
 }
-
-.jai-modal-image {
-  height: 240px;
-  border-radius: 15px;
-  background: linear-gradient(145deg, #f0f5ef, #fff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
-}
-
-.jai-modal-image img {
-  max-width: 100%;
-  max-height: 190px;
+.jai-product-image-inner img {
+  width: 100%; height: 100%;
   object-fit: contain;
 }
+.jai-image-missing { font-size: 12px; color: #999; }
 
-.jai-modal-content {
-  padding: 17px 12px 12px;
-}
-
-.jai-modal-label {
-  color: #a78343;
-  font-size: 10px;
+/* Content side */
+.jai-product-content { flex: 1; display: flex; flex-direction: column; }
+.jai-product-category {
+  color: #0a7a5e;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
-
-.jai-modal-content h3 {
-  color: #193d2c;
+.jai-product-content h3 {
   font-size: 20px;
-  line-height: 1.5;
-  margin: 10px 0;
+  line-height: 1.3;
+  color: #0b3b2f;
+  margin: 10px 0 8px;
+  font-weight: 800;
 }
-
-.jai-modal-content p {
-  color: #77857b;
+.jai-product-content p {
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.55;
+  color: #4a5a55;
+  margin: 0 0 16px;
 }
-
-.jai-modal-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 22px;
-}
-
-.jai-modal-buttons button {
-  flex: 1;
-  min-height: 46px;
-  border-radius: 50px;
-  padding: 10px;
-  font-weight: 700;
+.jai-product-button {
+  margin-top: auto;
+  align-self: flex-start;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  display: flex; align-items: center; gap: 12px;
+  background: #0a5c48;
+  color: #fff;
+  padding: 11px 16px 11px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: .25s;
+}
+.jai-product-button:hover { background: #073f32; transform: scale(1.03); }
+.jai-product-arrow {
+  background: #3a9ee0;
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  display: grid; place-items: center;
+  font-size: 13px;
 }
 
-.jai-modal-cancel {
-  border: 1px solid #dce5dd;
-  background: white;
-  color: #19432f;
+/* Footer */
+.jai-products-footer {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  margin-top: 38px; color: #083a2f; font-weight: 600;
 }
+.jai-products-footer span { width: 60px; height: 1px; background: rgba(0,0,0,0.15); }
 
-.jai-modal-cancel:hover {
-  background: #f0f5ef;
+/* Modal - Same style */
+.jai-modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,30,25,0.55);
+  backdrop-filter: blur(4px);
+  display: grid; place-items: center; padding: 20px;
 }
-
-.jai-modal-enquiry {
-  background: #19432f;
-  color: white;
-  border: 1px solid #19432f;
+.jai-product-modal {
+  background: #fff; border-radius: 22px;
+  max-width: 800px; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  overflow: hidden; position: relative;
 }
-
-.jai-modal-enquiry:hover {
-  background: #a78343;
-  border-color: #a78343;
+.jai-modal-close {
+  position: absolute; top: 12px; right: 14px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%; border: none;
+  background: #eee; font-size: 20px; cursor: pointer;
 }
+.jai-modal-image { background: #f2f8f5; display: grid; place-items: center; padding: 20px; }
+.jai-modal-image img { max-width: 100%; max-height: 320px; object-fit: contain; }
+.jai-modal-content { padding: 32px 26px; }
+.jai-modal-label { color: #0a7a5e; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+.jai-modal-content h3 { font-size: 24px; color: #0b3b2f; margin: 10px 0; }
+.jai-modal-content p { color: #555; line-height: 1.6; font-size: 14px; }
+.jai-modal-buttons { display: flex; gap: 12px; margin-top: 22px; }
+.jai-modal-cancel { padding: 10px 20px; border-radius: 50px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
+.jai-modal-enquiry { padding: 10px 20px; border-radius: 50px; border: none; background: #0a5c48; color: #fff; cursor: pointer; font-weight: 700; }
 
-/* =====================================
-   ANIMATIONS
-===================================== */
-
-@keyframes jaiFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Responsive */
+@media (max-width: 980px) {
+  .jai-products-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-@keyframes jaiModalUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* =====================================
-   TABLET RESPONSIVE
-===================================== */
-
-@media (max-width: 1000px) {
-  .jai-products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .jai-product-image {
-    height: 270px;
-  }
-}
-
-/* =====================================
-   MOBILE RESPONSIVE
-===================================== */
-
-@media (max-width: 600px) {
-  .jai-products-section {
-    padding: 65px 5%;
-  }
-
-  .jai-products-heading {
-    margin-bottom: 40px;
-  }
-
-  .jai-products-heading h2 {
-    font-size: 36px;
-  }
-
-  .jai-products-heading p {
-    font-size: 14px;
-  }
-
-  .jai-products-grid {
-    grid-template-columns: 1fr;
-    gap: 23px;
-  }
-
-  .jai-product-image {
-    height: 280px;
-  }
-
-  .jai-product-content {
-    padding: 15px 19px 23px;
-  }
-
-  .jai-product-content h3 {
-    font-size: 17px;
-    min-height: auto;
-  }
-
-  .jai-product-content p {
-    min-height: auto;
-  }
-
-  .jai-products-footer {
-    gap: 9px;
-    margin-top: 40px;
-  }
-
-  .jai-products-footer span {
-    width: 20px;
-  }
-
-  .jai-products-footer p {
-    font-size: 10px;
-    letter-spacing: 0.4px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .jai-product-card,
-  .jai-product-image img,
-  .jai-product-button,
-  .jai-product-arrow {
-    transition: none;
-  }
-
-  .jai-modal-overlay,
-  .jai-product-modal {
-    animation: none;
-  }
+@media (max-width: 620px) {
+  .jai-products-grid { grid-template-columns: 1fr; }
+  .jai-product-modal { grid-template-columns: 1fr; }
+  .jai-products-heading h2 { font-size: 32px; }
 }

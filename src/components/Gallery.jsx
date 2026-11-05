@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import bg1 from "../assets/bg1.jpg";
 
 // Same loader as your Products.jsx
 const files1 = import.meta.glob('../assets/products/*', { eager: true, as: 'url' });
@@ -58,14 +59,17 @@ function Gallery() {
   };
 
   return (
-    <section id="gallery" style={{ padding: '60px 0 60px 0', background: '#fdfbf6', overflow: 'hidden' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+    <section id="gallery" style={{ padding: '60px 0 60px 0', backgroundImage: `url(${bg1})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', overflow: 'hidden', position: 'relative' }}>
+      {/* Light overlay so cards stay clear */}
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(253,251,246,0.82)', zIndex: 0 }}></div>
+
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', position: 'relative', zIndex: 1 }}>
         <p style={{ fontSize: '12px', letterSpacing: '3px', fontWeight: '700', color: '#b07a4f', margin: 0 }}>OUR GALLERY</p>
         <h2 style={{ fontSize: '32px', fontWeight: '800', color: '#1e1e1e', marginTop: '8px', marginBottom: 0 }}>A Closer Look at Everyday Care</h2>
         <p style={{ fontSize: '14px', color: '#888', marginTop: '8px' }}>Discover the little things that make every day better.</p>
       </div>
 
-      <div style={{ position: 'relative', marginTop: '32px' }}>
+      <div style={{ position: 'relative', marginTop: '32px', zIndex: 1 }}>
         <div
           ref={scrollRef}
           style={{ display: 'flex', gap: '20px', overflowX: 'auto', scrollbarWidth: 'none', paddingLeft: '20px', paddingRight: '80px' }}
