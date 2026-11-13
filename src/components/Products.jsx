@@ -92,7 +92,6 @@ function Products() {
               return (
                 <article className="jai-product-card" key={i}>
                   <div className="jai-product-image">
-                    <span className="jai-product-number">{String(i + 1).padStart(2, "0")}</span>
                     <div className="jai-product-image-inner">
                       {img ? <img src={img} alt={p.name} loading="lazy" /> : <span className="jai-image-missing">{p.key} not found</span>}
                     </div>
